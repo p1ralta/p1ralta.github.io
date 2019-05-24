@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Калькулятор розмитнення</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="style.css" rel="stylesheet">
+</head>
+<body class="text-white">
+	<div id="bg">
+		<div class="container text-center">
+			<h1 class="pt-5">Калькулятор розмитнення<br><small> ( закон 8487/8488 )</small></h1>
+			<div class="col-lg- col-md-9 col-sm-12 col-12 mx-auto">
+				<div class="card text-left mt-4 mb-3">
+					<div class="card-body">
+						<form>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-12 col-sm-12 col-12 col-lg-12">
+										<label class="priceLabel">Ціна автомобіля за кордоном</label>
+										<div class="form-inline justify-content-between">
+											<input type="number" class="form-control col-lg-10 col-md-10 col-sm-10 col-12" placeholder="Вкажіть ціну автомобіля"  id="price">
+											<div class="col-lg-2 col-md-2 col-sm-2 col-12 priceBtn">
+												<button type="button" class="btn btn-secondary dropdown-toggle" id="currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+												<div class="dropdown-menu" aria-labelledby="currency">
+												    <a class="dropdown-item" href="#">USD</a>
+												    <a class="dropdown-item" href="#">EURO</a>
+												    <a class="dropdown-item" href="#">ZL</a>
+												</div>
+											</div>
+										</div>
+									</div>	
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-10 col-sm-10 col-12">
+										<label>Об'єм двигуна, дм<sup>3</sup></label>
+										<select class="form-control" id="selectEngine">
+											<option id="firstOption">0.5</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-10 col-sm-10 col-12">
+										<label>Тип двигуна</label>
+										<select class="form-control dropdown" id="engineType">
+											<option value="1">Бензин</option>
+											<option value="2">Дизель</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-10 col-sm-10 col-12">
+										<label>Вік автомобіля</label>
+										<select class="form-control dropdown" id="carAge">
+											<option>1 і менше</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option selected>10</option>
+											<option>11</option>
+											<option>12</option>
+											<option>13</option>
+											<option>14</option>
+											<option>15 і більше</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10 col-sm-10 col-12">
+									<input type="submit" class="btn btn-block col-md-12 col-lg-6 mx-auto mt-5 mb-3 col-sm-12" value="Розрахувати" />
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- Modal -->
+<div class="modal-wrapper">
+	<div id="modal">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Вартість розтаможки</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true" class="closeModal">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      	<div class=" d-flex justify-content-between">
+	        	<p>Акцизний збір - </p><p class="tax" id="excise"> 3456$</p>
+	        </div>
+	        <div class=" d-flex justify-content-between">
+	        	<p>ПДВ - </p><p class="tax" id="vat"> 328$</p>
+	        </div>
+	        <div class=" d-flex justify-content-between">
+	        	<p>Ввізне мито - </p><p class="tax" id="duty"> 174$</p>
+	        </div>
+	        <hr>
+	        <div class=" d-flex justify-content-between">
+	        	<p>Загальна ціна розмитнення - </p><p class="tax" id="allTax"> 7657$</p>
+	        </div>
+	        <hr>
+	        <div class=" d-flex justify-content-between">
+	        	<p>Пенсійний збір - </p><p class="tax"id="pensionary"> 7657$</p>
+	        </div>
+	        <hr>
+	        <div class=" d-flex justify-content-between">
+	        	<p class="tax">Ціна авто з розмитненням - </p><p class="taxAll" id="allCar"> 7657$</p>
+	        </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">Закрити</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

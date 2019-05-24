@@ -1,0 +1,113 @@
+body{
+			background: url("ford.jpg") no-repeat;
+			background-size: cover;
+		}
+		form{
+			padding: 0 20px;
+		}
+		label{
+			font-size: 20px;
+			font-weight: 700;
+		}
+		#bg{
+			background: rgba(18, 18, 20, 0.7);
+			background-size: cover;
+			height: 100%;
+			width: 100vw;	
+		}
+		.container{
+				margin-bottom: 105px;
+			}
+		.card{
+			background-color: rgba(18, 18, 20, 0.8);
+		}
+		.card input .card select{
+			opacity: 0.9;
+		}
+		input[type="submit"]{
+			background-color: #8e570e;
+			color: #fff;
+			font-size: 1.2rem;
+			text-transform: uppercase;
+		}
+		input[type="submit"]:hover{	
+			color: #fff;
+			font-weight: 500;
+		}
+		.modal-wrapper{
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(18, 18, 20, 0.6);
+			background-size: cover;
+			min-height: 100vh;
+			min-width: 100vw;
+			display: none;
+			animation-name: modalopen;
+ 		    animation-duration: 1s;
+		}
+		.modal-content{
+			background: #f2f2f2;
+		}
+	    #modal p{
+			color: #000;
+		}
+		.modal-header{
+			background: #161616;
+		}
+		.close{
+			color: #fff;
+		}
+		.close:hover{
+			color: red;
+		}
+		.modal-body .tax{
+			font-weight: 500;
+			font-size: 1.2rem;
+		}
+		.modal-body .taxAll{
+			font-weight: 700;
+			font-size: 1.4rem;
+		}
+		@keyframes modalopen {
+		  from {
+		    opacity: 0;
+		  }
+		  to {
+		    opacity: 1;
+		  }
+		}
+		@media (max-width: 578px){
+			#bg{
+				height: 100%;
+			}
+			label{
+				font-size: 1.0rem;
+			}
+			h1{
+				font-size: 1.6rem;
+				padding-top: 20px;
+			}
+			input[type="submit"], button[type="button"]{
+				font-size: 1rem;
+			}
+			input[type="submit"]{
+				margin-top: 1.5rem !important;
+			}
+			.card-body{
+				padding: 0.5rem;
+			}
+			.priceBtn{
+				padding: 0;
+			}
+			#currency{
+				width: 100%;
+				margin-top: 10px;
+			}
+			.modal-body .tax{
+			font-size: 1.0rem;
+			}
+			.modal-body .taxAll{
+				font-size: 1.2rem;
+			}
+		}
